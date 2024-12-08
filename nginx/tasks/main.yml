@@ -1,0 +1,12 @@
+---
+- name: Install Nginx Packages
+  apt:
+    name: nginx  # Utilisez 'nginx' en minuscule
+    state: present
+
+- name: Start Nginx Service
+  service:
+    name: nginx  # Utilisez 'nginx' en minuscule
+    state: started
+    enabled: yes  # Pour activer le service au démarrage
+  notify: Reload Nginx
